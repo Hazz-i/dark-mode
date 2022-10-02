@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buat lu</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            background: linear-gradient(white, oldlace);
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #toggle{
+            position: absolute;
+            height: 40px;
+            width: 75px;
+            background: black;
+            border-radius: 50px;
+            outline: none;
+            transition: .5s;
+            appearance: none;
+        }
+        #toggle::after{
+            content: "";
+            position: absolute;
+            height: 36px;
+            width: 35px;
+            background: white;
+            border-radius: 50px;
+            top: 2px;
+            left: 2px;
+            cursor: pointer;
+            transition: .5s
+        }
+        .container h1{
+            position: absolute;
+            transform: translateY(-50px);;
+            color: white;
+            font-weight: bold;
+            display: none;
+        }
+        .dark-mode{
+            background: url(stars.png), linear-gradient(black, rgb(32, 32, 84));
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+        .dark-mode #toggle{
+            background: white;
+            transition: .5s
+        }
+        .dark-mode #toggle::after{
+            position: absolute;
+            left:39px;
+            background: black;
+            transition: .5s
+        }
+        .dark-mode h1{
+            position: absolute;
+            transform: translateY(-50px);;
+            color: white;
+            font-weight: bold;
+            transition: .5s;
+            display: grid;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Good Night DUDE :)</h1>
+        <input type="checkbox" id="toggle">
+    </div>
+
+    <script>
+        document.getElementById("toggle").addEventListener("click", function(){
+            document.getElementsByClassName("container")[0].classList.toggle("dark-mode")
+        })
+    </script>
+</body>
+</html>
